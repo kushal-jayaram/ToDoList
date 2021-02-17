@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDo</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<input type="text" id="NEW_LIST_ITEM">
+	<button onclick="addItem()">Add Item </button>
+<!-- 1. create a list -->
+
+<!-- give 2 defualt list items -->
+<script type="text/javascript">
+	var listItems = ['do JS','learn css'];
+</script>
+<script type="text/javascript">
+	function addItem(){
+		var tempItem = document.getElementById("NEW_LIST_ITEM").value;
+		listItems.push(tempItem);
+		displayList(tempItem);
+		document.getElementById("NEW_LIST_ITEM").value =" "
+	}
+</script>
+<!-- display the list -->
+<div id = "display">
+	<h3>YOUR TODO ITEMS : </h3>
+	<ul>
+		<script type="text/javascript">
+			listItems.forEach(displayList);
+
+			function displayList(item){
+				document.getElementById("display").innerHTML  += "<li>"+item+"</li>"
+			}
+		</script>
+	</ul>
+</div>
+<!-- Addd items to list-->
+
+</body>
+</html>
